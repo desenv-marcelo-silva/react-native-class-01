@@ -1,10 +1,6 @@
 # React Native First App
 > This is an App to follow an classes from Bootcamp Rocketseat.
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
 This App uses tools like babel-eslint, eslint, prettier and Reactotron.
 
 ## Usage example
