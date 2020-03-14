@@ -16,8 +16,15 @@ export default function Routes() {
           backgroundColor: '#7159c1',
         },
         headerTintColor: '#FFF',
+        headerTitleAlign: 'center',
       }}>
-      <Stack.Screen name="Main" component={Main} options={{ title: 'Main' }} />
+      <Stack.Screen
+        name="Main"
+        component={Main}
+        options={{
+          title: 'Usuários',
+        }}
+      />
       <Stack.Screen
         name="User"
         component={User}
