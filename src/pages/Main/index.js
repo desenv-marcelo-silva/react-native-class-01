@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, Button } from 'react-native';
+import { Button } from 'react-native';
 
-import { Container } from './styles';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import { Container, Form, Input, SubmitButton } from './styles';
 
 export default function Main({ navigation }) {
   function handleNavigate(user) {
@@ -10,7 +12,16 @@ export default function Main({ navigation }) {
 
   return (
     <Container>
-      <Text>Primeira página</Text>
+      <Form>
+        <Input
+          autoCorrect={false}
+          autoCapitalize="none"
+          placeholder="Adicionar usuário"
+        />
+        <SubmitButton>
+          <Icon name="add" size={20} color="#FFF" />
+        </SubmitButton>
+      </Form>
       <Button
         title="Acessar página Users"
         onPress={() => handleNavigate({ id: 1, name: 'Marcelo' })}
