@@ -1,12 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, Button } from 'react-native';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
-export default function Main() {
+export default function Main({ navigation }) {
+  function handleNavigate(user) {
+    navigation.navigate('User', { user });
+  }
+
   return (
-    <View>
+    <Container>
       <Text>Primeira página</Text>
-    </View>
+      <Button
+        title="Acessar página Users"
+        onPress={() => handleNavigate({ id: 1, name: 'Marcelo' })}
+      />
+    </Container>
   );
 }
