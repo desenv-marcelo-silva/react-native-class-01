@@ -4,16 +4,7 @@ import { View, Text, Button } from 'react-native';
 
 // import { Container } from './styles';
 
-export default function User({ navigation }) {
-  return (
-    <View>
-      <Text>Usuário</Text>
-      <Button title="Main" onPress={() => navigation.navigate('Main')} />
-      <Button title="Usando voltar" onPress={() => navigation.goBack()} />
-      <Button
-        title="Ir para a primeira página"
-        onPress={() => navigation.popToTop()}
-      />
-    </View>
-  );
+export default function User(props) {
+  console.tron.log(props);
+  return <View />;
 }

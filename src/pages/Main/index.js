@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Keyboard, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import PropTypes from 'prop-types';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import api from '../../services/api';
 
 import {
@@ -20,6 +22,13 @@ import {
 } from './styles';
 
 export default class Main extends Component {
+  // eslint-disable-next-line react/static-property-placement
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -37,10 +46,10 @@ export default class Main extends Component {
     }
   }
 
-  async componentDidUpdate(_, prevState) {
+  componentDidUpdate(_, prevState) {
     const { users } = this.state;
     if (prevState.users !== users) {
-      await AsyncStorage.setItem('users', JSON.stringify(users));
+      AsyncStorage.setItem('users', JSON.stringify(users));
     }
   }
 
@@ -65,6 +74,11 @@ export default class Main extends Component {
     });
 
     Keyboard.dismiss();
+  };
+
+  handleNavigate = user => {
+    const { navigation } = this.props;
+    navigation.navigate('User', { user });
   };
 
   render() {
@@ -100,7 +114,7 @@ export default class Main extends Component {
               <Name>{item.name}</Name>
               <Bio>{item.bio}</Bio>
 
-              <ProfileButton onPress={() => {}}>
+              <ProfileButton onPress={() => this.handleNavigate(item)}>
                 <ProfileButtonText>Ver perfil</ProfileButtonText>
               </ProfileButton>
             </User>
