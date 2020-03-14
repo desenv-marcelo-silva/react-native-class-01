@@ -22,13 +22,6 @@ import {
 } from './styles';
 
 export default class Main extends Component {
-  // eslint-disable-next-line react/static-property-placement
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func,
-    }).isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -124,3 +117,9 @@ export default class Main extends Component {
     );
   }
 }
+
+Main.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
+};
