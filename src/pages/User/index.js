@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { View } from 'react-native';
-
-// import PropTypes from 'prop-types';
-
-// import { Container } from './styles';
+import { Container, Header, Avatar, Name, Bio } from './styles';
 
 import api from '../../services/api';
 
@@ -18,17 +14,32 @@ export default class User extends React.Component {
   }
 
   async componentDidMount() {
-    const { route } = this.props;
-    const { user } = route.params;
+    const user = this.getUserDataFromRoute();
 
     const response = await api.get(`/users/${user.login}/starred`);
 
     this.setState({ stars: response.data });
   }
 
+  getUserDataFromRoute() {
+    const { route } = this.props;
+    const { user } = route.params;
+    return user;
+  }
+
   render() {
     const { stars } = this.state;
-    return <View />;
+    const user = this.getUserDataFromRoute();
+
+    return (
+      <Container>
+        <Header>
+          <Avatar source={{ uri: user.avatar }} />
+          <Name>{user.name}</Name>
+          <Bio>{user.bio}</Bio>
+        </Header>
+      </Container>
+    );
   }
 }
 
