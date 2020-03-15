@@ -26,3 +26,6 @@ After this, type:
 yarn start
 ```
 
+And, this app is show:
+
+![](toreadme/RN resumes.gif)
