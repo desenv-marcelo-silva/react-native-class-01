@@ -26,6 +26,6 @@ After this, type:
 yarn start
 ```
 
-And, this app is show:
+And, this app is shown:
 
-![](toreadme/RN resumes.gif)
+![App running](/toreadme/RN resumes.gif)
