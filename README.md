@@ -28,4 +28,4 @@ yarn start
 
 And, this app is shown:
 
-![App running](/toreadme/RN resumes.gif)
+![App running]('/toreadme/RN resumes.gif')
