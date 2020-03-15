@@ -28,4 +28,6 @@ yarn start
 
 And, this app is shown:
 
-![App running]('/toreadme/RN resumes.gif')
+![App running][app_running]
+
+[app_running]: https://github.com/desenv-marcelo-silva/react-native-class-01/blob/master/toreadme/RN%20resumes.gif "App running on emulator"
